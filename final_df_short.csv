@@ -1,0 +1,11 @@
+id,gender,masterCategory,subCategory,articleType,baseColour,season,year,usage,productDisplayName,filename,link,path,main_style,secondary_style
+1,Men,Apparel,Topwear,T-Shirts,Blue,Summer,2023,Casual,"Nike Men Blue T-Shirt",nike_blue_tshirt.jpg,https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400,nike_blue.jpg,casual fashion,sportswear
+2,Women,Apparel,Bottomwear,Jeans,Black,Winter,2023,Casual,"Levi's Women Black Jeans",levis_black_jeans.jpg,https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400,levis_black.jpg,casual fashion,smart casual
+3,Unisex,Apparel,Topwear,Hoodies,Gray,Fall,2023,Casual,"Adidas Unisex Gray Hoodie",adidas_gray_hoodie.jpg,https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400,adidas_gray.jpg,sportswear,casual fashion
+4,Men,Apparel,Topwear,Shirts,White,Spring,2023,Formal,"H&M Men White Shirt",hm_white_shirt.jpg,https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400,hm_white.jpg,formal wear,smart casual
+5,Women,Apparel,Bottomwear,Skirts,Red,Summer,2023,Party,"Zara Women Red Skirt",zara_red_skirt.jpg,https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400,zara_red.jpg,party outfit,casual fashion
+6,Men,Apparel,Topwear,Jackets,Black,Winter,2023,Formal,"Hugo Boss Men Black Jacket",hugo_boss_black.jpg,https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400,hugo_boss.jpg,formal wear,smart casual
+7,Women,Apparel,Topwear,Dresses,Pink,Spring,2023,Party,"Mango Women Pink Dress",mango_pink.jpg,https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=400,mango_pink.jpg,party outfit,casual fashion
+8,Unisex,Apparel,Topwear,Sweaters,Green,Fall,2023,Casual,"Uniqlo Unisex Green Sweater",uniqlo_green.jpg,https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400,uniqlo_green.jpg,casual fashion,home wear
+9,Men,Apparel,Bottomwear,Shorts,Blue,Summer,2023,Sports,"Nike Men Blue Shorts",nike_shorts.jpg,https://images.unsplash.com/photo-1506629905607-0a2a0b0b0b0b?w=400,nike_shorts.jpg,sportswear,casual fashion
+10,Women,Apparel,Topwear,Blouses,White,Spring,2023,Formal,"Zara Women White Blouse",zara_white.jpg,https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400,zara_white.jpg,formal wear,smart casual
