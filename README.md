@@ -29,9 +29,7 @@
 - **TypeScript** - типизированный JavaScript
 - **React Navigation** - навигация между экранами
 - **AsyncStorage** - локальное хранение данных
-- **React Native Cards Swipe** - современный компонент для свайпов с Reanimated
-- **React Native Reanimated** - высокопроизводительные анимации
-- **React Native Gesture Handler** - обработка жестов
+- **React Native Deck Swiper** - проверенный компонент для свайпов карточек
 - **Expo Image Picker** - выбор изображений
 - **React Native Chart Kit** - графики и диаграммы
 
@@ -62,8 +60,8 @@ npm run ios      # для iOS
 ### Особенности Expo SDK 54+
 - Поддержка React Native 0.76+
 - Улучшенная производительность
-- Современные анимации с Reanimated 3
-- Улучшенная обработка жестов
+- Совместимость с проверенными библиотеками
+- Стабильная работа свайпов
 
 ## Структура проекта
 
