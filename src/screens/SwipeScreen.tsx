@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { View, Text, StyleSheet, Alert, Dimensions } from 'react-native';
-import CardsSwipe from 'react-native-cards-swipe';
+import Swiper from 'react-native-deck-swiper';
 import { ClothingCard } from '../components/ClothingCard';
 import { ClothingItem } from '../types';
 import { loadClothingData } from '../utils/csvParser';
@@ -30,15 +30,21 @@ export const SwipeScreen: React.FC = () => {
     }
   };
 
-  const handleSwipeRight = useCallback(async (item: ClothingItem) => {
-    await StorageService.saveLikedItem(item.id);
-    console.log('Liked item:', item.id);
-  }, []);
+  const handleSwipeRight = useCallback(async (cardIndex: number) => {
+    const item = clothingItems[cardIndex];
+    if (item) {
+      await StorageService.saveLikedItem(item.id);
+      console.log('Liked item:', item.id);
+    }
+  }, [clothingItems]);
 
-  const handleSwipeLeft = useCallback(async (item: ClothingItem) => {
-    await StorageService.saveDislikedItem(item.id);
-    console.log('Disliked item:', item.id);
-  }, []);
+  const handleSwipeLeft = useCallback(async (cardIndex: number) => {
+    const item = clothingItems[cardIndex];
+    if (item) {
+      await StorageService.saveDislikedItem(item.id);
+      console.log('Disliked item:', item.id);
+    }
+  }, [clothingItems]);
 
   const handleSwipedAll = useCallback(() => {
     Alert.alert(
@@ -48,7 +54,7 @@ export const SwipeScreen: React.FC = () => {
     );
   }, []);
 
-  const renderCard = useCallback((item: ClothingItem) => {
+  const renderCard = useCallback((item: ClothingItem, index: number) => {
     return <ClothingCard key={item.id} item={item} />;
   }, []);
 
@@ -89,13 +95,66 @@ export const SwipeScreen: React.FC = () => {
       </View>
 
       <View style={styles.swiperContainer}>
-        <CardsSwipe
+        <Swiper
           cards={clothingItems}
           renderCard={renderCard}
-          onSwipeRight={handleSwipeRight}
-          onSwipeLeft={handleSwipeLeft}
+          onSwipedRight={handleSwipeRight}
+          onSwipedLeft={handleSwipeLeft}
           onSwipedAll={handleSwipedAll}
-          cardContainerStyle={styles.cardContainer}
+          renderNoMoreCards={renderNoMoreCards}
+          cardIndex={currentIndex}
+          backgroundColor="transparent"
+          stackSize={3}
+          stackSeparation={15}
+          animateOverlayLabelsOpacity
+          animateCardOpacity
+          swipeBackCard
+          overlayLabels={{
+            left: {
+              title: 'НЕ',
+              style: {
+                label: {
+                  backgroundColor: '#FF6B6B',
+                  borderColor: '#FF6B6B',
+                  color: 'white',
+                  borderWidth: 1,
+                  fontSize: 24,
+                  fontWeight: 'bold',
+                  padding: 10,
+                  borderRadius: 10,
+                },
+                wrapper: {
+                  flexDirection: 'column',
+                  alignItems: 'flex-end',
+                  justifyContent: 'flex-start',
+                  marginTop: 30,
+                  marginLeft: -30,
+                },
+              },
+            },
+            right: {
+              title: 'ДА',
+              style: {
+                label: {
+                  backgroundColor: '#4ECDC4',
+                  borderColor: '#4ECDC4',
+                  color: 'white',
+                  borderWidth: 1,
+                  fontSize: 24,
+                  fontWeight: 'bold',
+                  padding: 10,
+                  borderRadius: 10,
+                },
+                wrapper: {
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                  justifyContent: 'flex-start',
+                  marginTop: 30,
+                  marginLeft: 30,
+                },
+              },
+            },
+          }}
         />
       </View>
     </View>
@@ -130,10 +189,6 @@ const styles = StyleSheet.create({
   swiperContainer: {
     flex: 1,
     paddingTop: 20,
-  },
-  cardContainer: {
-    width: '92%',
-    height: '70%',
   },
   loadingContainer: {
     flex: 1,
