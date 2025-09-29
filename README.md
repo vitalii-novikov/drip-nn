@@ -25,16 +25,24 @@
 ## Технологии
 
 - **React Native** - фреймворк для мобильной разработки
-- **Expo** - платформа для разработки React Native приложений
+- **Expo SDK 54+** - современная платформа для разработки React Native приложений
 - **TypeScript** - типизированный JavaScript
 - **React Navigation** - навигация между экранами
 - **AsyncStorage** - локальное хранение данных
-- **React Native Deck Swiper** - компонент для свайпов
+- **React Native Cards Swipe** - современный компонент для свайпов с Reanimated
+- **React Native Reanimated** - высокопроизводительные анимации
+- **React Native Gesture Handler** - обработка жестов
 - **Expo Image Picker** - выбор изображений
 - **React Native Chart Kit** - графики и диаграммы
 
 ## Установка и запуск
 
+### Предварительные требования
+- Node.js 18+ 
+- Expo CLI: `npm install -g @expo/cli`
+- Expo Go приложение на мобильном устройстве
+
+### Установка
 1. Установите зависимости:
 ```bash
 npm install
@@ -50,6 +58,12 @@ npm start
 npm run android  # для Android
 npm run ios      # для iOS
 ```
+
+### Особенности Expo SDK 54+
+- Поддержка React Native 0.76+
+- Улучшенная производительность
+- Современные анимации с Reanimated 3
+- Улучшенная обработка жестов
 
 ## Структура проекта
 
