@@ -1,11 +1,13 @@
 export interface Item {
   id: number;
-  link: string;
   name: string;
-  description: string;
-  gender?: 'Male' | 'Female';
-  category?: 'Topwear' | 'Bottomwear';
-  season?: 'Fall' | 'Summer' | 'Winter' | 'Spring';
+  url: string;
+  style1: string;
+  style2: string;
+  category: string;
+  type: string;
+  basecolour: string;
+  season: string;
 }
 
 export interface Feedback {
@@ -25,9 +27,12 @@ export interface User {
 }
 
 export interface FilterOptions {
-  gender?: 'Male' | 'Female';
-  category?: 'Topwear' | 'Bottomwear';
-  season?: 'Fall' | 'Summer' | 'Winter' | 'Spring';
+  category?: string;
+  season?: string;
+  basecolour?: string;
+  type?: string;
+  style1?: string;
+  style2?: string;
 }
 
 export interface ApiResponse<T> {

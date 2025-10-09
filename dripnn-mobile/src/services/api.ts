@@ -41,17 +41,26 @@ export const apiService = {
     try {
       const params = new URLSearchParams();
       
-      if (filters?.gender) {
-        params.append('gender', filters.gender);
-      }
       if (filters?.category) {
         params.append('category', filters.category);
       }
       if (filters?.season) {
         params.append('season', filters.season);
       }
+      if (filters?.basecolour) {
+        params.append('basecolour', filters.basecolour);
+      }
+      if (filters?.type) {
+        params.append('type', filters.type);
+      }
+      if (filters?.style1) {
+        params.append('style1', filters.style1);
+      }
+      if (filters?.style2) {
+        params.append('style2', filters.style2);
+      }
 
-      const response: AxiosResponse<Item[]> = await api.get(`/items?${params.toString()}`);
+      const response: AxiosResponse<Item[]> = await api.get(`/get_items?${params.toString()}`);
       return response.data;
     } catch (error) {
       console.error('Error fetching items:', error);
