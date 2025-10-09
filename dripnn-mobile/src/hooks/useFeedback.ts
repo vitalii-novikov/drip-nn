@@ -90,10 +90,11 @@ export const useFeedback = (userId: number) => {
     const styleCount: { [key: string]: number } = {};
     
     likedItems.forEach(item => {
-      // Assuming we can extract style from item name or description
-      // This is a simplified approach - you might need to adjust based on your data structure
-      const style = item.name.split(' ')[0] || 'Unknown';
-      styleCount[style] = (styleCount[style] || 0) + 1;
+      // Используем style1 и style2 для анализа предпочтений
+      const styles = [item.style1, item.style2].filter(Boolean);
+      styles.forEach(style => {
+        styleCount[style] = (styleCount[style] || 0) + 1;
+      });
     });
 
     return Object.entries(styleCount).map(([style, count]) => ({

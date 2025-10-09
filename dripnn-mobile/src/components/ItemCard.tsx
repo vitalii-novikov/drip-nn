@@ -18,22 +18,16 @@ export const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
   return (
     <View style={styles.container}>
       <Image
-        source={{ uri: item.link }}
+        source={{ uri: item.url }}
         style={styles.image}
         resizeMode="cover"
       />
       <View style={styles.overlay}>
         <Text style={styles.name}>{item.name}</Text>
-        <Text style={styles.description}>{item.description}</Text>
-        {item.gender && (
-          <Text style={styles.meta}>Gender: {item.gender}</Text>
-        )}
-        {item.category && (
-          <Text style={styles.meta}>Category: {item.category}</Text>
-        )}
-        {item.season && (
-          <Text style={styles.meta}>Season: {item.season}</Text>
-        )}
+        <Text style={styles.description}>{item.type} - {item.basecolour}</Text>
+        <Text style={styles.meta}>Category: {item.category}</Text>
+        <Text style={styles.meta}>Season: {item.season}</Text>
+        <Text style={styles.meta}>Style: {item.style1}, {item.style2}</Text>
       </View>
     </View>
   );

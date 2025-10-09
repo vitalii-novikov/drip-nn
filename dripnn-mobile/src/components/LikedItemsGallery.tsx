@@ -36,7 +36,7 @@ export const LikedItemsGallery: React.FC<LikedItemsGalleryProps> = ({
       style={styles.itemContainer}
       onPress={() => onItemPress?.(item)}
     >
-      <Image source={{ uri: item.link }} style={styles.image} />
+      <Image source={{ uri: item.url }} style={styles.image} />
       <View style={styles.overlay}>
         <Text style={styles.name} numberOfLines={2}>
           {item.name}

@@ -22,14 +22,11 @@ export const FilterModal: React.FC<FilterModalProps> = ({
   filters,
   onFiltersChange,
 }) => {
-  const genderOptions: Array<'Male' | 'Female'> = ['Male', 'Female'];
-  const categoryOptions: Array<'Topwear' | 'Bottomwear'> = ['Topwear', 'Bottomwear'];
-  const seasonOptions: Array<'Fall' | 'Summer' | 'Winter' | 'Spring'> = [
-    'Fall',
-    'Summer',
-    'Winter',
-    'Spring',
-  ];
+  const categoryOptions = ['Topwear', 'Bottomwear', 'Footwear', 'Accessories'];
+  const seasonOptions = ['Fall', 'Summer', 'Winter', 'Spring'];
+  const basecolourOptions = ['White', 'Black', 'Blue', 'Red', 'Green', 'Yellow', 'Pink', 'Purple', 'Orange', 'Brown', 'Grey'];
+  const typeOptions = ['Shirts', 'T-shirts', 'Jeans', 'Trousers', 'Dresses', 'Skirts', 'Jackets', 'Sweaters', 'Shoes', 'Bags'];
+  const styleOptions = ['Formal', 'Casual', 'Business Casual', 'Streetwear', 'Vintage', 'Bohemian', 'Minimalist', 'Sporty'];
 
   const handleFilterChange = (type: keyof FilterOptions, value: string | undefined) => {
     onFiltersChange({
@@ -54,48 +51,6 @@ export const FilterModal: React.FC<FilterModalProps> = ({
           </View>
 
           <ScrollView style={styles.content}>
-            {/* Gender Filter */}
-            <View style={styles.section}>
-              <Text style={styles.sectionTitle}>Gender</Text>
-              <View style={styles.optionsContainer}>
-                <TouchableOpacity
-                  style={[
-                    styles.option,
-                    !filters.gender && styles.optionSelected,
-                  ]}
-                  onPress={() => handleFilterChange('gender', undefined)}
-                >
-                  <Text
-                    style={[
-                      styles.optionText,
-                      !filters.gender && styles.optionTextSelected,
-                    ]}
-                  >
-                    All
-                  </Text>
-                </TouchableOpacity>
-                {genderOptions.map((option) => (
-                  <TouchableOpacity
-                    key={option}
-                    style={[
-                      styles.option,
-                      filters.gender === option && styles.optionSelected,
-                    ]}
-                    onPress={() => handleFilterChange('gender', option)}
-                  >
-                    <Text
-                      style={[
-                        styles.optionText,
-                        filters.gender === option && styles.optionTextSelected,
-                      ]}
-                    >
-                      {option}
-                    </Text>
-                  </TouchableOpacity>
-                ))}
-              </View>
-            </View>
-
             {/* Category Filter */}
             <View style={styles.section}>
               <Text style={styles.sectionTitle}>Category</Text>
@@ -171,6 +126,132 @@ export const FilterModal: React.FC<FilterModalProps> = ({
                       style={[
                         styles.optionText,
                         filters.season === option && styles.optionTextSelected,
+                      ]}
+                    >
+                      {option}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+
+            {/* Base Colour Filter */}
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Color</Text>
+              <View style={styles.optionsContainer}>
+                <TouchableOpacity
+                  style={[
+                    styles.option,
+                    !filters.basecolour && styles.optionSelected,
+                  ]}
+                  onPress={() => handleFilterChange('basecolour', undefined)}
+                >
+                  <Text
+                    style={[
+                      styles.optionText,
+                      !filters.basecolour && styles.optionTextSelected,
+                    ]}
+                  >
+                    All
+                  </Text>
+                </TouchableOpacity>
+                {basecolourOptions.map((option) => (
+                  <TouchableOpacity
+                    key={option}
+                    style={[
+                      styles.option,
+                      filters.basecolour === option && styles.optionSelected,
+                    ]}
+                    onPress={() => handleFilterChange('basecolour', option)}
+                  >
+                    <Text
+                      style={[
+                        styles.optionText,
+                        filters.basecolour === option && styles.optionTextSelected,
+                      ]}
+                    >
+                      {option}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+
+            {/* Type Filter */}
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Type</Text>
+              <View style={styles.optionsContainer}>
+                <TouchableOpacity
+                  style={[
+                    styles.option,
+                    !filters.type && styles.optionSelected,
+                  ]}
+                  onPress={() => handleFilterChange('type', undefined)}
+                >
+                  <Text
+                    style={[
+                      styles.optionText,
+                      !filters.type && styles.optionTextSelected,
+                    ]}
+                  >
+                    All
+                  </Text>
+                </TouchableOpacity>
+                {typeOptions.map((option) => (
+                  <TouchableOpacity
+                    key={option}
+                    style={[
+                      styles.option,
+                      filters.type === option && styles.optionSelected,
+                    ]}
+                    onPress={() => handleFilterChange('type', option)}
+                  >
+                    <Text
+                      style={[
+                        styles.optionText,
+                        filters.type === option && styles.optionTextSelected,
+                      ]}
+                    >
+                      {option}
+                    </Text>
+                  </TouchableOpacity>
+                ))}
+              </View>
+            </View>
+
+            {/* Style Filter */}
+            <View style={styles.section}>
+              <Text style={styles.sectionTitle}>Style</Text>
+              <View style={styles.optionsContainer}>
+                <TouchableOpacity
+                  style={[
+                    styles.option,
+                    !filters.style1 && styles.optionSelected,
+                  ]}
+                  onPress={() => handleFilterChange('style1', undefined)}
+                >
+                  <Text
+                    style={[
+                      styles.optionText,
+                      !filters.style1 && styles.optionTextSelected,
+                    ]}
+                  >
+                    All
+                  </Text>
+                </TouchableOpacity>
+                {styleOptions.map((option) => (
+                  <TouchableOpacity
+                    key={option}
+                    style={[
+                      styles.option,
+                      filters.style1 === option && styles.optionSelected,
+                    ]}
+                    onPress={() => handleFilterChange('style1', option)}
+                  >
+                    <Text
+                      style={[
+                        styles.optionText,
+                        filters.style1 === option && styles.optionTextSelected,
                       ]}
                     >
                       {option}
